@@ -48,6 +48,7 @@ fn main() {
 			println!("Thread ID: {}", thread_id);
 			println!("Thread Handle: {:x?}", thread_handle);
 			WaitForSingleObject(thread_handle, 0xFFFFFFFF);
+			VirtualFree(base_ptr, 0, 0x8000);
 		}	
 		else{
 			println!("Error in VirtualAlloc: {}", GetLastError());
